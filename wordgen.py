@@ -32,7 +32,23 @@ def get_game_word(difficulty):
     return game_word
 
 
+def create_hidden_word(game_word):
+    """
+    Takes the game_word and creates a new string with only dashes in place of letters.
+    :param game_word: String
+    :return: String (dashed-game-word)
+    """
+
+    hidden_word = "_" * len(game_word)
+
+    return hidden_word
 
 
 
+game = get_game_word(2)
 
+print(game)
+
+game_board = create_hidden_word(game)
+
+print(game_board)

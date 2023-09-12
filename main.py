@@ -1,3 +1,7 @@
+import hang_board
+import wordgen
+import alphabet_data
+
 def main():
     player_name = input("Hello. My name is Chester, the Hangman Guru. Isn't Hangman the best? So much strategy, "
                         "so many delightful choices. Oh, I'm sorry. Where are my manners. What is your name? \n")
@@ -31,7 +35,13 @@ def main():
 
         return check_choice
 
-    choose_difficulty()
+    generated_word = wordgen.get_game_word(choose_difficulty())
+
+    our_game = hang_board.HangBoard(player_name, generated_word, wordgen.create_hidden_word(generated_word),
+                                    alphabet_data.alphabet)
+
+
+
 
 
 main()

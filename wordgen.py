@@ -44,7 +44,6 @@ def create_hidden_word(game_word):
     return hidden_word
 
 
-
 game = get_game_word(2)
 
 print(game)

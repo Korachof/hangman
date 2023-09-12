@@ -6,7 +6,7 @@ def get_game_word(difficulty):
     """
     Use the random-word package to find a random English word for the hangman game.
     Utilizes the better_profanity package to check if the word is appropriate for all ages
-    :param difficulty: INT (Easy: 1, Medium: 2, Hard: 3, Insane: 4)
+    :param difficulty: String (Easy: 1, Medium: 2, Hard: 3, Insane: 4)
     :return: String (the word)
     """
     game_word = None

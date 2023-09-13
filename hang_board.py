@@ -71,15 +71,7 @@ class HangBoard:
 
         return False
 
-my_game = HangBoard("Joe", "chester chesterson", "____", alphabet_data.alphabet)
 
-my_game.update_current_word("t")
-
-print(my_game.get_current_word())
-
-my_game.update_alphabet_options("C")
-
-print(my_game.get_remaining_choices())
 
 
 

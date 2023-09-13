@@ -11,24 +11,24 @@ def get_game_word(difficulty):
     """
     game_word = None
 
-    if difficulty == 1:
+    if difficulty == "1":
         while game_word is None or profanity.contains_profanity(game_word) is True or len(game_word) > 5:
             game_word = RandomWords().get_random_word()
             print("Thinking...")
 
-    elif difficulty == 2:
+    elif difficulty == "2":
         while game_word is None or profanity.contains_profanity(game_word) is True \
                 or 5 > len(game_word) or len(game_word) > 8:
             game_word = RandomWords().get_random_word()
             print("Thinking...")
 
-    elif difficulty == 3:
+    elif difficulty == "3":
         while game_word is None or profanity.contains_profanity(game_word) is True \
                 or 8 > len(game_word) or len(game_word) > 11:
             game_word = RandomWords().get_random_word()
             print("Thinking...")
 
-    elif difficulty == 4:
+    elif difficulty == "4":
         while game_word is None or profanity.contains_profanity(game_word) is True or len(game_word) < 11:
             game_word = RandomWords().get_random_word()
             print("Thinking...")
@@ -47,11 +47,3 @@ def create_hidden_word(game_word):
 
     return hidden_word
 
-
-game = get_game_word(1)
-
-print(game)
-
-game_board = create_hidden_word(game)
-
-print(game_board)

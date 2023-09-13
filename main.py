@@ -2,12 +2,12 @@ import hang_board
 import wordgen
 import alphabet_data
 
+
 def main():
     player_name = input("Hello. My name is Chester, the Hangman Guru. Isn't Hangman the best? So much strategy, "
                         "so many delightful choices. Oh, I'm sorry. Where are my manners. What is your name? \n")
 
-    print \
-        ("\nNice to meet you, " + player_name + ". I would love to a play a game of Hangman. But I will let you choose "
+    print("\nNice to meet you, " + player_name + ". I would love to a play a game of Hangman. But I will let you choose "
                                                 "the difficulty.")
 
     def choose_difficulty():
@@ -33,15 +33,19 @@ def main():
         if check_choice.upper() != "Y":
             choose_difficulty()
 
-        return check_choice
+        return difficulty
 
-    generated_word = wordgen.get_game_word(choose_difficulty())
+    difficulty = choose_difficulty()
+
+    generated_word = wordgen.get_game_word(difficulty)
 
     our_game = hang_board.HangBoard(player_name, generated_word, wordgen.create_hidden_word(generated_word),
                                     alphabet_data.alphabet)
 
-
-
+    print(our_game.get_player())
+    print(generated_word)
+    print(our_game.get_current_word())
+    print(our_game.get_remaining_choices())
 
 
 main()

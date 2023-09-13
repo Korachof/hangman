@@ -1,3 +1,6 @@
+import alphabet_data
+
+
 class HangBoard:
     """
     Initializes with 4 parameters:
@@ -32,7 +35,11 @@ class HangBoard:
         Get the remaining alphabet choices
         :return: String (made from dictionary in alphabet_data)
         """
-        return self._remaining_choices
+        display_choices = ""
+        for element in self._alphabet_choices:
+            display_choices += (element + " ")
+
+        return display_choices
 
     def update_current_word(self, guess):
         """
@@ -51,12 +58,28 @@ class HangBoard:
 
         return self._current_word
 
+    def update_alphabet_options(self, guess):
+        """
+        Updates the alphabet options the player still has to guess
+        :param guess: String (letter the user is guessing)
+        :return: Bool (True if guess is in list, False otherwise)
+        """
+        for index in range(len(self._alphabet_choices)):
+            if self._alphabet_choices[index] == guess:
+                self._alphabet_choices.remove(guess)
+                return True
 
-my_game = HangBoard("Joe", "chester chesterson", "____", "A")
+        return False
+
+my_game = HangBoard("Joe", "chester chesterson", "____", alphabet_data.alphabet)
 
 my_game.update_current_word("t")
 
 print(my_game.get_current_word())
+
+my_game.update_alphabet_options("C")
+
+print(my_game.get_remaining_choices())
 
 
 

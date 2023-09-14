@@ -1,6 +1,8 @@
 import hang_board
 import wordgen
 import alphabet_data
+import play_hangman
+import reset_game
 
 
 def main():
@@ -40,12 +42,17 @@ def main():
     generated_word = wordgen.get_game_word(difficulty)
 
     our_game = hang_board.HangBoard(player_name, generated_word, wordgen.create_hidden_word(generated_word),
-                                    alphabet_data.alphabet)
+                                    alphabet_data.alphabet, " ")
 
-    print(our_game.get_player())
-    print(generated_word)
-    print(our_game.get_current_word())
-    print(our_game.get_remaining_choices())
+    print("Great! Now that my trusty machine has found a word for us, let's begin! You can go first. I've provided "
+          "your options below")
+
+    play = play_hangman.play_game(our_game)
+
+    # if user wants to retry, reset
+    if play == "Y":
+        main()
 
 
 main()
+

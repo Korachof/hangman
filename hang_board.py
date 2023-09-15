@@ -20,7 +20,6 @@ class HangBoard:
         self._board = None
         self._correct_guesses_dict = {}
 
-
     def get_player(self):
         """
         Get player name
@@ -136,8 +135,6 @@ class HangBoard:
         elif self._hangman_level == 7:
             self._hangman_pic = hangmanpics.hangman_pic_levels[6]
 
-            print("Game Over. \nThe word was " + self._word)
-
-            return reset_game.reset()
+            return False
 
 

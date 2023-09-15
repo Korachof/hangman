@@ -23,8 +23,8 @@ def play_game(hangman_class):
 
         update = hangman_class.update_hangman_pic()
 
-        if update is not None and update.upper() == "Y":
-            return update.upper()
+        if update is False:
+            return update
 
         keep_playing(hangman_class)
 

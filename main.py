@@ -21,7 +21,7 @@ def main():
         difficulty = None
 
         while difficulty != "1" and difficulty != "2" and difficulty != "3" and difficulty != "4":
-            difficulty = input(
+              difficulty = input(
                 "Please choose a difficulty by typing the number corresponded to that difficulty setting "
                 "and pressing Enter\n"
                 "1) Easy - 5 letters or fewer \n"
@@ -40,9 +40,17 @@ def main():
     difficulty = choose_difficulty()
 
     generated_word = wordgen.get_game_word(difficulty)
+    for index in range(len(alphabet_data.alphabet)):
+        print(alphabet_data.alphabet[index])
+
+    alphabet = alphabet_data.alphabet.copy()
 
     our_game = hang_board.HangBoard(player_name, generated_word, wordgen.create_hidden_word(generated_word),
-                                    alphabet_data.alphabet, " ")
+                                    alphabet, " ")
+
+    print(our_game.get_player())
+    print(our_game.get_word())
+    print(our_game.get_alphabet())
 
     print("Great! Now that my trusty machine has found a word for us, let's begin! You can go first. I've provided "
           "your options below")
@@ -52,11 +60,26 @@ def main():
     if play is True:
         print("Incredible! You win! \n")
         print("The word was " + our_game.get_word() + "\n")
-        play = reset_game.reset()
+        reset()
 
-    # if user wants to retry, reset
-    if play == "Y":
-        main()
+    elif play is False:
+        print("Game Over. \nThe word was " + our_game.get_word())
+
+
+def reset():
+    reset_answer = input("Would you like to play again? Type Y for Yes or N for No \n")
+
+    if reset_answer.upper() == "N":
+        exit()
+
+    while reset_answer.upper() != "N" and reset_answer.upper() != "Y":
+        reset_answer = reset_helper
+
+    return main()
+
+
+def reset_helper():
+    return reset()
 
 
 main()

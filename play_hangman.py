@@ -3,10 +3,13 @@ import hang_board
 
 
 def play_game(hangman_class):
+    """
+    Function that allows the user to play through a game of hangman
+    :param hangman_class: Class Object (hang_board.HangBoard)
+    :return: Bool (True if the user completed the word, False if they lost)
+    """
     print(hangman_class.get_remaining_choices())
-    print("\n")
     print(hangman_class.get_hangman_pic())
-    print("\n")
     print(hangman_class.get_current_word())
     guess = input("Please type the letter you would like to guess from the remaining options and press Enter \n")
     update_alpha = hangman_class.update_alphabet_options(guess.lower())

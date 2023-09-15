@@ -112,6 +112,10 @@ class HangBoard:
         return False
 
     def update_hangman_pic(self):
+        """
+        Updates the ASCII hangman picture to display how close the user is to losing.
+        :return: None, unless hangman_leve == 7, in which case, False (the player lost)
+        """
         self._hangman_level += 1
 
         if self._hangman_level == 1:

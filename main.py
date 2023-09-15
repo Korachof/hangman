@@ -66,6 +66,10 @@ def main():
 
 
 def reset():
+    """
+    Asks the user if they would like to play again. If no, exits program. If yes, starts over.
+    :return: Function (main() if player wants to play again)
+    """
     reset_answer = input("Would you like to play again? Type Y for Yes or N for No \n")
 
     if reset_answer.upper() == "N":
@@ -78,6 +82,10 @@ def reset():
 
 
 def reset_helper():
+    """
+    Helper function for reset
+    :return: Function (reset())
+    """
     return reset()
 
 

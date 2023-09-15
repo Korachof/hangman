@@ -1,5 +1,5 @@
 import hang_board
-import reset_game
+
 
 
 def play_game(hangman_class):
@@ -27,6 +27,9 @@ def play_game(hangman_class):
             return update
 
         keep_playing(hangman_class)
+
+        if hangman_class.get_current_word() == hangman_class.get_word():
+            return True
 
     # Guess is correct
     elif guess_bool is True:

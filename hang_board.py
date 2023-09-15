@@ -1,5 +1,5 @@
 import hangmanpics
-import reset_game
+
 
 
 class HangBoard:

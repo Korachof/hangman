@@ -2,7 +2,6 @@ import hang_board
 import wordgen
 import alphabet_data
 import play_hangman
-import reset_game
 
 
 def main():

@@ -1,4 +1,5 @@
 import hang_board
+import reset_game
 
 def play_game(hangman_class):
     print(hangman_class.get_remaining_choices())
@@ -33,7 +34,7 @@ def play_game(hangman_class):
         if hangman_class.get_current_word() != hangman_class.get_word():
             play_game(hangman_class)
 
-        print("Incredible! You win! \n")
+        return True
 
 
 

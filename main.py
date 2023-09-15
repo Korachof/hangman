@@ -49,6 +49,10 @@ def main():
 
     play = play_hangman.play_game(our_game)
 
+    if play is True:
+        print("Incredible! You win! \n")
+        play = reset_game.reset()
+
     # if user wants to retry, reset
     if play == "Y":
         main()

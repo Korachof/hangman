@@ -9,8 +9,8 @@ def main():
     player_name = input("Hello. My name is Chester, the Hangman Guru. Isn't Hangman the best? So much strategy, "
                         "so many delightful choices. Oh, I'm sorry. Where are my manners. What is your name? \n")
 
-    print("\nNice to meet you, " + player_name + ". I would love to a play a game of Hangman. But I will let you choose "
-                                                "the difficulty.")
+    print("\nNice to meet you, " + player_name + ". I would love to a play a game of Hangman. But I will let you choose"
+                                                 " the difficulty.")
 
     def choose_difficulty():
         """

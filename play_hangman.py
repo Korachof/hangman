@@ -2,18 +2,18 @@ import hang_board
 
 def play_game(hangman_class):
     print(hangman_class.get_remaining_choices())
-    print("\n \n")
+    print("\n")
     print(hangman_class.get_hangman_pic())
-    print("\n \n")
+    print("\n")
     print(hangman_class.get_current_word())
     guess = input("Please type the letter you would like to guess from the remaining options and press Enter \n")
-    update_alpha = hangman_class.update_alphabet_options(guess)
+    update_alpha = hangman_class.update_alphabet_options(guess.lower())
 
     # if the guess is not in the remaining options then start over and guess again
     if update_alpha is False:
         play_game(hangman_class)
 
-    guess_bool = hangman_class.update_current_word(guess)
+    guess_bool = hangman_class.update_current_word(guess.lower())
 
     # Guess is incorrect
     if guess_bool is False:

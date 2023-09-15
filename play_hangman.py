@@ -12,7 +12,7 @@ def play_game(hangman_class):
 
     # if the guess is not in the remaining options then start over and guess again
     if update_alpha is False:
-        play_game(hangman_class)
+        keep_playing(hangman_class)
 
     guess_bool = hangman_class.update_current_word(guess.lower())
 
@@ -25,16 +25,24 @@ def play_game(hangman_class):
         if update is not None and update.upper() == "Y":
             return update.upper()
 
-        play_game(hangman_class)
+        keep_playing(hangman_class)
 
     # Guess is correct
     elif guess_bool is True:
         print("Awesome! You guessed correctly! \n")
 
         if hangman_class.get_current_word() != hangman_class.get_word():
-            play_game(hangman_class)
+            keep_playing(hangman_class)
 
-        return True
+        else:
+            return True
 
 
+def keep_playing(hangman_class):
+    """
+    A helper function to play_game() to prevent unintended recursive behavior
+    :param hangman_class: Class Object (hang_board.HangBoard)
+    :return: Function (play_game)
+    """
+    return play_game(hangman_class)
 

@@ -39,8 +39,6 @@ def main():
     difficulty = choose_difficulty()
 
     generated_word = wordgen.get_game_word(difficulty)
-    for index in range(len(alphabet_data.alphabet)):
-        print(alphabet_data.alphabet[index])
 
     alphabet = alphabet_data.alphabet.copy()
 
@@ -49,7 +47,6 @@ def main():
 
     print(our_game.get_player())
     print(our_game.get_word())
-    print(our_game.get_alphabet())
 
     print("Great! Now that my trusty machine has found a word for us, let's begin! You can go first. I've provided "
           "your options below")

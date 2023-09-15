@@ -11,7 +11,7 @@ def play_game(hangman_class):
     print(hangman_class.get_remaining_choices())
     print(hangman_class.get_hangman_pic())
     print(hangman_class.get_current_word())
-    guess = input("Please type the letter you would like to guess from the remaining options and press Enter \n")
+    guess = input("\nPlease type the letter you would like to guess from the remaining options and press Enter \n")
     update_alpha = hangman_class.update_alphabet_options(guess.lower())
 
     # if the guess is not in the remaining options then start over and guess again

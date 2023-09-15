@@ -51,6 +51,7 @@ def main():
 
     if play is True:
         print("Incredible! You win! \n")
+        print("The word was " + our_game.get_word() + "\n")
         play = reset_game.reset()
 
     # if user wants to retry, reset

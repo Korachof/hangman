@@ -91,8 +91,6 @@ class HangBoard:
 
             updated_word += letter
 
-
-
         # if the word didn't change, then return False for incorrect guess
         if self._current_word == updated_word:
             return False

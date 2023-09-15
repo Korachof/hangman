@@ -18,6 +18,7 @@ class HangBoard:
         self._hangman_pic = hangman_pic
         self._hangman_level = 0
         self._board = None
+        self._correct_guesses_dict = {}
 
 
     def get_player(self):
@@ -82,9 +83,15 @@ class HangBoard:
         """
         updated_word = ""
         for letter in self._word:
-            if letter != guess and letter != " ":
+            if letter not in self._correct_guesses_dict and letter != guess and letter != " " and letter != "-":
                 letter = "_"
+
+            elif letter == guess:
+                self._correct_guesses_dict[guess] = None
+
             updated_word += letter
+
+
 
         # if the word didn't change, then return False for incorrect guess
         if self._current_word == updated_word:
